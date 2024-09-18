@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="wordleData.js" defer="defer"></script>
+  <script src="wordleHelper.js" defer="defer"></script>
+  <link rel="stylesheet" href="wordleHelper.css">
+  <title>Wordle Helper</title>
+</head>
+<body>
+  <section class="intro">
+
+    <h1>Wordle Helper</h1>
+  
+    <p>Cette page utilise les données originales du Wordle officiel, 
+proposé par le New-York Times, afin de vous assister dans la résolution 
+du fameux puzzle.</p>
+  </section>
+
+  <section class="inputs">
+    <div>
+      <label for="letters-in">Lettres présentes dans le mot à découvrir</label>
+      <input type="text" style="text-transform: lowercase;" id="letters-in">
+    </div>
+    
+    <div>
+      <label for="letters-out">Lettres absentes</label>
+      <input type="text" style="text-transform: lowercase;" id="letters-out">
+    </div>
+    
+    <div>
+      <label>Lettre bien placée en position ...</label>
+      
+      <div class="horizontal">
+        
+        <label for="letter-in-1">1</label>
+        <input type="text" maxlength="1" style="text-transform: lowercase;" id="letter-in-1">
+        
+        <label for="letter-in-2">2</label>
+        <input type="text" maxlength="1" style="text-transform: lowercase;" id="letter-in-2">
+        
+        <label for="letter-in-3">3</label>
+        <input type="text" maxlength="1" style="text-transform: lowercase;" id="letter-in-3">
+        
+        <label for="letter-in-4">4</label>
+        <input type="text" maxlength="1" style="text-transform: lowercase;" id="letter-in-4">
+        
+        <label for="letter-in-5">5</label>
+        <input type="text" maxlength="1" style="text-transform: lowercase;" id="letter-in-5">
+      </div>
+        
+    </div>
+  </section>
+
+  <button id="findWord">Rechercher les solutions possibles</button>
+
+<section id="solutions">
+  <code></code>
+</section>
+
+  
+
+</body></html>

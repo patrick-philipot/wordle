@@ -1,0 +1,89 @@
+
+/* champ de saisie */
+input {
+  font-size: 120%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* les groupes de saisies */
+
+.inputs > div {
+  display: flex;
+  flex-direction: column;
+  padding: .5em;
+}
+
+label {
+  padding-bottom: .4em;
+}
+
+#letters-in {
+  width: 5em;
+}
+
+#letters-out {
+  width: 17em;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+#letter-in-1,
+#letter-in-2,
+#letter-in-3,
+#letter-in-4,
+#letter-in-5 {
+  width: 1em;
+  margin: 0 0.5em 0 0;
+}
+
+/* bouton de recherche */
+#findWord {
+  padding: 1em;
+  margin: 0;
+  width: 100%;
+  font-size: 120%;
+}
+
+/* affichage des solutions possibles */
+#solutions {
+  display: flex;
+  flex-direction: column;
+}
+
+code {
+  display: block;
+  justify-content: center;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 110%;
+  color: lightcoral;
+}
+
+
+/*   Autres que smartphone  */
+@media only screen and (min-width: 500px) {
+  body {
+    width: 500px;
+    margin:auto;
+    font-size: 120%;
+  }
+
+  #letter-in-1,
+  #letter-in-2,
+  #letter-in-3,
+  #letter-in-4,
+  #letter-in-5 {
+  width: 1em;
+  margin: 0 1em 0 .3em;
+}
+}
