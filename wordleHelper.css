@@ -41,7 +41,12 @@ label {
 #letter-in-2,
 #letter-in-3,
 #letter-in-4,
-#letter-in-5 {
+#letter-in-5,
+#letter-notin-1,
+#letter-notin-2,
+#letter-notin-3,
+#letter-notin-4,
+#letter-notin-5 {
   width: 1em;
   margin: 0 0.5em 0 0;
 }

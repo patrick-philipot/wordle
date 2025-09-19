@@ -7,6 +7,11 @@ const letter_2 = document.getElementById("letter-in-2")
 const letter_3 = document.getElementById("letter-in-3")
 const letter_4 = document.getElementById("letter-in-4")
 const letter_5 = document.getElementById("letter-in-5")
+const badletter_1 = document.getElementById("letter-notin-1")
+const badletter_2 = document.getElementById("letter-notin-2")
+const badletter_3 = document.getElementById("letter-notin-3")
+const badletter_4 = document.getElementById("letter-notin-4")
+const badletter_5 = document.getElementById("letter-notin-5")
 
 // bouton
 const findWord = document.getElementById("findWord")
@@ -29,8 +34,10 @@ findWord.addEventListener("click", () => {
     }
     return true
   })
-    
-  
+
+  // t1 contient un sous ensemble de targetWords composés des mots
+  // contenant TOUTES les lettre présentes dans le mot à découvrir
+
   // éliminer les mots contenant les lettres non présentes
   const _out_ = letters_out.value.toLowerCase()
   
@@ -40,6 +47,9 @@ findWord.addEventListener("click", () => {
     }
     return true
   })
+
+  // t2 un sous ensemble de t1 composés des mots
+  // qui contiennent une lettre absente dans le mot à découvrir
 
   dispArray(t2)
 
@@ -52,8 +62,8 @@ findWord.addEventListener("click", () => {
   wellPlaced.push(letter_4.value === "" ? "?" : letter_4.value.toLowerCase())
   wellPlaced.push(letter_5.value === "" ? "?" : letter_5.value.toLowerCase())
 
-  console.log(wellPlaced)
-
+  // console.log(wellPlaced)
+  
   wellPlaced.forEach(function(letter, index) {
     if (letter !=  "?") {
       t2 = t2.filter( (mot) => {
@@ -61,6 +71,34 @@ findWord.addEventListener("click", () => {
       })
     }
   })
+  
+  dispArray(t2)
+  
+  // tenir compte des lettres mal placées
+  const wrongPlaced = []
+
+
+  const map = new Map()
+
+
+
+if ( badletter_1.value != "") map.set(0, badletter_1.value.toLowerCase())
+if ( badletter_2.value != "") map.set(1, badletter_2.value.toLowerCase())
+if ( badletter_3.value != "") map.set(2, badletter_3.value.toLowerCase())
+if ( badletter_4.value != "") map.set(3, badletter_4.value.toLowerCase())
+if ( badletter_5.value != "") map.set(4, badletter_5.value.toLowerCase())
+
+//  rejeter les mots contenant la lettre mal placée
+t2 = t2.filter( (mot) => {
+    // test de toutes les lettres 
+    // avec accepted vrai le mot est conservé
+    accepted = true
+    for (const [key, value] of map) {
+      if (mot.charAt(key) === value) accepted = false
+      // console.log(`Testing ${value} with ${mot.charAt(key)} at ${key} for ${mot} gives ${accepted} `)
+    }
+    return accepted
+})
 
   dispArray(t2)
 
